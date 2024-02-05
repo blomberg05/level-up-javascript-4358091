@@ -8,15 +8,18 @@ class Books {
   }
 
   get Availibility() {
-    switch(this.numOfCopies){
+   return this.getAvailibility();
+  }
+  getAvailibility() {
+  switch(this.numOfCopies){
       case  this.numOfCopies === 0 : {
-        return "Out of stock"
+        return "Out of stock";
       }
       case this.numOfCopies < 10 : {
-        return "Low stock"
+        return "Low stock";
       }
       default : {
-       return  "In stock"
+       return  "In stock";
       }
     }
   }
