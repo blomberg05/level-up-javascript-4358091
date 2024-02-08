@@ -29,5 +29,18 @@ class Book {
     this.numCopies += numCopiesStocked;
   }
 }
+class TecBook extends Book {
+  constructor(title, author, ISBN, numCopies,edition) {
+    super(title, author, ISBN, numCopies)
+    this.edtion = edition;
+  }
 
+  getEdition(){
+    return `Edition ${this.edtion}`
+  }
+}
+const IceMan = new TecBook("Iceman", "Izzy",12345,2,10);
+console.log(IceMan.getEdition()) ;
+console.log(IceMan.availability) ;
+console.log(IceMan.title) ;
 // Write your code here
