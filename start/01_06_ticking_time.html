@@ -8,27 +8,20 @@
   <title>Ticking Time</title>
 </head>
 
-<body onload="startTime()">
+<body>
   <!-- To run this file right click the file in the navigation bar and select "Open with live server. Then open the developer tools in the browser and head to the console window."-->
 
   <!-- Use this element to render your clock -->
   <div id="clock">
-    <p id="tick"></p>
   </div>
 
   <script>
-
   function startTime() {
-    var time = new Date();
-    var h = time.getHours();
-    var mm = time.getMinutes();
-    var ss = time.getSeconds();
-
-    document.getElementById('tick').innerHTML = h+":"+mm+":"+ss;
-    setTimeout(() => {
-      startTime()
-      }, "1000");
+    setInterval(() => {
+      document.getElementById('clock').innerHTML = new Date().toLocaleTimeString();
+    }, "1000");
   }
+  startTime()
   </script>
 </body>
 
