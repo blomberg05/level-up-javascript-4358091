@@ -15,6 +15,24 @@
   <ul id="combined-menu"></ul>
 
   <script>
+    menu1 = ["pizza","lasagne","carbonara"];
+    menu2 = ["pizza", "lasagne", "carbonara","Spaggethi"];
+    menu3 = ["pizza", "lasagne", "carbonara"]
+
+    function combineMenu(...menus) {
+      let menu = []
+      menu = menu.concat(...menus);
+      let cMenu = new Set(menu);
+      let ul = document.querySelector("#combined-menu");
+      console.log(cMenu)
+      for (const m of cMenu) {
+        let li = document.createElement("li");
+        li.textContent = m;
+        ul.appendChild(li)
+      }
+    }
+    var menu = combineMenu(menu1,menu2,menu3);
+ 
     // Write your code here
 
   </script>
